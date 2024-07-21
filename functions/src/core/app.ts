@@ -6,7 +6,7 @@ import errorHandler from "../entities/ApiError";
 import createHttpError from "http-errors";
 
 const app: Express = express();
-const PORT = 8000;
+// const PORT = 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,9 +23,11 @@ app.use((req, res, next) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// In development, we can run the server using the following code:
+
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
 
 
 export default app;
